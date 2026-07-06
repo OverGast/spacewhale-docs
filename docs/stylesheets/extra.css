@@ -1,31 +1,16 @@
 /* ══════════════════════════════════════════════════════════════
    SpaceWhale docs — classic monochrome theme
+   Header colors come from Material's native white (light) / black
+   (dark) primary; this file only adds depth, motion, and branding.
    ══════════════════════════════════════════════════════════════ */
 
 :root {
-  --sw-ink:     #101012;   /* near-black */
-  --sw-ink-2:   #2b2b30;
-  --sw-mist:    rgba(0, 0, 0, 0.08);
-  --sw-glow:    rgba(0, 0, 0, 0.22);
+  --sw-mist: rgba(0, 0, 0, 0.08);
+  --sw-glow: rgba(0, 0, 0, 0.22);
 }
-/* Light mode: white header + tabs, ink text/icons/logo */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color:        #ffffff;
-  --md-primary-fg-color--light: #ffffff;
-  --md-primary-fg-color--dark:  #ffffff;
-  --md-primary-bg-color:        #101012;
-  --md-primary-bg-color--light: rgba(16, 16, 18, 0.72);
-}
-
-/* Dark mode: ink header + tabs, near-white text/icons/logo */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color: #0d0d0f;
   --md-code-bg-color:    #17171b;
-  --md-primary-fg-color:        #0d0d0f;
-  --md-primary-fg-color--light: #0d0d0f;
-  --md-primary-fg-color--dark:  #0d0d0f;
-  --md-primary-bg-color:        #ffffff;
-  --md-primary-bg-color--light: rgba(255, 255, 255, 0.72);
   --sw-mist: rgba(255, 255, 255, 0.10);
   --sw-glow: rgba(0, 0, 0, 0.55);
 }
@@ -37,20 +22,16 @@ html { scroll-behavior: smooth; }
   scroll-margin-top: 5.2rem;
 }
 
-/* ── Header + tabs: solid ink, sticky, frosted ───────────────── */
+/* ── Header + tabs: sticky, frosted, with a hairline + soft shadow ── */
 .md-header {
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
   box-shadow: 0 1px 0 var(--sw-mist), 0 2px 16px -10px var(--sw-glow);
 }
 .md-tabs {
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
   border-bottom: 1px solid var(--sw-mist);
   backdrop-filter: saturate(120%) blur(4px);
 }
 .md-tabs__link {
-  opacity: 0.7;
+  opacity: 0.72;
   transition: opacity 160ms ease, transform 160ms ease;
 }
 .md-tabs__link:hover,
@@ -59,17 +40,20 @@ html { scroll-behavior: smooth; }
   transform: translateY(-1px);
 }
 
-/* Logo: gentle idle bob */
+/* ── Logo: small rounded brand tile, readable on any header color ── */
+.md-header__button.md-logo {
+  padding: 0.2rem;
+}
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 1.55rem;
-  width: 1.55rem;
-  animation: sw-bob 4.5s ease-in-out infinite;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 0 1px var(--sw-mist);
 }
-@keyframes sw-bob {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-2.5px); }
-}
+
+/* Hide GitHub star/fork facts on the header source link */
+.md-source__facts { display: none; }
 
 /* ── Hero heading: bold, high-contrast, subtle sheen ─────────── */
 .md-typeset h1:first-of-type {

@@ -1,14 +1,14 @@
 site_name: SpaceWhale Docs
 site_description: Documentation for SpaceWhale Unity Editor tools.
 site_url: https://overgast.github.io/spacewhale-docs/
-repo_url: https://github.com/OverGast/spacewhale-docs
-repo_name: OverGast/spacewhale-docs
+repo_url: https://github.com/OverGast/Hierarchy-Inspector
+repo_name: OverGast/Hierarchy-Inspector
 copyright: Copyright &copy; SpaceWhale
 
 theme:
   name: material
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
+  logo: assets/logo.png
+  favicon: assets/logo.png
   font:
     text: Inter
     code: JetBrains Mono
@@ -22,7 +22,7 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
+      primary: white
       accent: grey
       toggle:
         icon: material/weather-sunny
@@ -61,6 +61,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/repo-link.js
 
 plugins:
   - search
