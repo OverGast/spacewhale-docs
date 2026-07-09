@@ -6,8 +6,6 @@ description: Measure code you cannot annotate with the manual Scope, BeginSessio
 
 `[Profile]` is the primary way to use Profiler Decorator, and it covers almost every case. For the occasional block you cannot annotate as a method (part of a method, a loop body, or a third-party call site), there is a manual scope API that records into the same window.
 
-![A manual profiler scope in code](../assets/manual-api/01-manual-scope.png)
-
 !!! info "Prefer the attribute"
     Reach for `[Profile]` first. It needs no setup, no session management, and no cleanup. Use the manual API only when attributing a whole method is not enough.
 

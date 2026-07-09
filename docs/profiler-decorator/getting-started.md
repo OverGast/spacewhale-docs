@@ -62,6 +62,7 @@ The package id is `com.spacewhale.profilerdecorator`.
 | Profile a single method | Add `[Profile]` to the method |
 | Profile every method in a class | Add `[Profile]` to the class |
 | Exclude one method from a `[Profile]` class | Add `[NoProfile]` to that method |
+| Measure a block you cannot annotate (a loop body, part of a method, a third-party call) | The [manual `Scope` API](features/manual-api.md) |
 | See self vs total time | The **Self** and **Total** columns in the method table |
 | See per-frame history | The **History** sparkline column on each row |
 | Open the frame graph | Click a row's **History** sparkline (this pauses Play Mode) |
