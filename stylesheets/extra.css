@@ -1,0 +1,159 @@
+/* ══════════════════════════════════════════════════════════════
+   SpaceWhale docs — classic monochrome theme
+   Header colors come from Material's native white (light) / black
+   (dark) primary; this file only adds depth, motion, and branding.
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --sw-mist: rgba(0, 0, 0, 0.08);
+  --sw-glow: rgba(0, 0, 0, 0.22);
+}
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0d0d0f;
+  --md-code-bg-color:    #17171b;
+  --sw-mist: rgba(255, 255, 255, 0.10);
+  --sw-glow: rgba(0, 0, 0, 0.55);
+}
+
+/* Smooth anchor jumps; offset so headings clear the sticky header + tabs */
+html { scroll-behavior: smooth; }
+:target,
+.md-typeset :is(h1, h2, h3, h4, h5, h6):target {
+  scroll-margin-top: 5.2rem;
+}
+
+/* ── Header + tabs: sticky, frosted, with a hairline + soft shadow ── */
+.md-header {
+  box-shadow: 0 1px 0 var(--sw-mist), 0 2px 16px -10px var(--sw-glow);
+}
+.md-tabs {
+  border-bottom: 1px solid var(--sw-mist);
+  backdrop-filter: saturate(120%) blur(4px);
+}
+.md-tabs__link {
+  opacity: 0.72;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* ── Logo: small rounded brand tile, readable on any header color ── */
+.md-header__button.md-logo {
+  padding: 0.2rem;
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 0 1px var(--sw-mist);
+}
+
+/* Hide GitHub star/fork facts on the header source link */
+.md-source__facts { display: none; }
+
+/* ── Hero heading: bold, high-contrast, subtle sheen ─────────── */
+.md-typeset h1:first-of-type {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg,
+    var(--md-default-fg-color) 0%,
+    var(--md-default-fg-color--light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Fade-up entrance for content ────────────────────────────── */
+.md-content__inner > * {
+  animation: sw-rise 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes sw-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Grid cards: lift + neutral glow + icon float ────────────── */
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.85rem;
+  padding: 1.2rem 1.3rem;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  transform: translateY(-6px);
+  border-color: var(--md-default-fg-color--light);
+  box-shadow: 0 18px 40px -18px var(--sw-glow);
+}
+.md-typeset .grid.cards :is(.twemoji, svg) {
+  color: var(--md-default-fg-color);
+  transition: transform 220ms ease;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover :is(.twemoji, svg) {
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* ── Buttons: ink primary ────────────────────────────────────── */
+.md-typeset .md-button {
+  border-radius: 0.6rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.md-typeset .md-button--primary {
+  background: var(--md-default-fg-color);
+  border-color: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
+}
+.md-typeset .md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px var(--sw-glow);
+}
+
+/* ── Admonitions: neutral, subtle hover ──────────────────────── */
+.md-typeset :is(.admonition, details) {
+  border-radius: 0.6rem;
+  border-left-width: 0.25rem;
+  transition: box-shadow 200ms ease;
+}
+.md-typeset :is(.admonition, details):hover {
+  box-shadow: 0 8px 24px -18px var(--sw-glow);
+}
+
+/* ── Content images: framed + subtle zoom ────────────────────── */
+.md-typeset img:not(.twemoji):not([src$=".svg"]) {
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 30px -20px var(--sw-glow);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.md-typeset img:not(.twemoji):not([src$=".svg"]):hover {
+  transform: scale(1.01);
+  box-shadow: 0 18px 44px -22px var(--sw-glow);
+}
+
+/* ── Nav + links polish ──────────────────────────────────────── */
+.md-nav__link { transition: color 140ms ease, transform 140ms ease; }
+.md-nav__item .md-nav__link:hover { transform: translateX(2px); }
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active { font-weight: 700; }
+.md-nav__item--section > .md-nav__link {
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.62rem;
+}
+.md-typeset a { text-underline-offset: 0.15em; }
+
+/* Back-to-top button */
+.md-top { box-shadow: 0 8px 24px -14px var(--sw-glow); }
+
+/* ── Respect reduced-motion preferences ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
