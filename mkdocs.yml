@@ -86,3 +86,12 @@ nav:
           - Customization Tab: hierarchy-inspector/theme/customization.md
       - Keyboard Shortcuts: hierarchy-inspector/shortcuts.md
       - Support: hierarchy-inspector/support.md
+  - Profiler Decorator:
+      - Overview: profiler-decorator/index.md
+      - Getting Started: profiler-decorator/getting-started.md
+      - Features:
+          - The Profile Attribute: profiler-decorator/features/profile-attribute.md
+          - The Profiler Window: profiler-decorator/features/profiler-window.md
+          - The Frame Graph: profiler-decorator/features/frame-graph.md
+          - The Manual API: profiler-decorator/features/manual-api.md
+      - Support: profiler-decorator/support.md

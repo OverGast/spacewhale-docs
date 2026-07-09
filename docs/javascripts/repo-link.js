@@ -11,6 +11,10 @@
     "hierarchy-inspector": {
       url: "https://github.com/OverGast/Hierarchy-Inspector",
       name: "OverGast/Hierarchy-Inspector"
+    },
+    "profiler-decorator": {
+      url: "https://github.com/OverGast/Profiler-Decorator",
+      name: "OverGast/Profiler-Decorator"
     }
   };
 

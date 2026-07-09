@@ -22,6 +22,16 @@ jump into its docs.
     [:octicons-rocket-24: Get started](hierarchy-inspector/getting-started.md){ .md-button .md-button--primary }
     [:octicons-book-24: Overview](hierarchy-inspector/index.md){ .md-button }
 
+-   :material-timer-outline:{ .lg .middle } __Profiler Decorator__
+
+    ---
+
+    Attribute-driven method profiling: add `[Profile]`, play, and read a live
+    worst-offenders table, self vs total time, and a per-frame frame graph.
+
+    [:octicons-rocket-24: Get started](profiler-decorator/getting-started.md){ .md-button .md-button--primary }
+    [:octicons-book-24: Overview](profiler-decorator/index.md){ .md-button }
+
 </div>
 
 !!! info "More tools coming"
